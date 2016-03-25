@@ -1,0 +1,14 @@
+{
+    "name": "javedwang/edaixi_rpc",
+    "keywords": ["edaixi"],
+    "homepage": "http://www.edaixi.com/",
+    "license": "MIT",
+    "description": "edaixi_rpc",
+    "require": {
+        "php": ">=5.3.0",
+        "rmccue/requests": "^1.6"
+    },
+    "autoload": {
+        "psr-4": {"App\\Lib\\": "src/"}
+    }
+}
