@@ -8,7 +8,7 @@ class Handler
 	{
 		$der =  json_decode($r->body);
 		$type = $der->model;
-		var_dump($r);
+		//var_dump($r);
 		switch ($type) {
 			case 'boolean':
 				# code...
@@ -40,7 +40,7 @@ class Handler
 				{
 					$model_name= $der->model;
 					$m = 'App\Rpc\Model\Rpc'.$model_name;
-					var_dump($m);
+					//var_dump($m);
 					$result = new $m();
 					$result ->put ($der->results);
 					break;
