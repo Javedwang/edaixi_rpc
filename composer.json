@@ -1,5 +1,5 @@
 {
-    "name": "vagrant/edaixi_rpc",
+    "name": "edaixi_rpc/lib",
     "description": "edaixi_rpc",
     "require": {
         "rmccue/requests": "^1.6"
