@@ -1,14 +1,14 @@
 {
-    "name": "edaixi_rpc/lib",
+    "name": "Javedwang/edaixi_rpc",
+    "keywords": ["edaixi"],
+    "homepage": "http://www.edaixi.com/",
+    "license": "MIT",
     "description": "edaixi_rpc",
     "require": {
+        "php": ">=5.3.0",
         "rmccue/requests": "^1.6"
     },
-    "authors": [
-        {
-            "name": "javed",
-            "email": "i@javed.cn"
-        }
-    ],
-    "minimum-stability": "alpha"
+    "autoload": {
+        "psr-4": {"edaixi_rpc\\": "src"}
+    }
 }
