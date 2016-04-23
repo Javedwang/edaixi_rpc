@@ -82,9 +82,12 @@ class Apimodel
 		$callclass = get_called_class();
 		if(empty($callclass::$structure))
 		{
-			 	$url = $callclass::$host.$callclass::api_url.$callclass::structure_url;
-			 	$json = Handler::structure($url);
-			 	return $callclass::$structure = json_decode($json);
+			if(method_exists($callclass,'setHost')){
+				$callclass::setHost();
+			}
+			$url = $callclass::$host.$callclass::api_url.$callclass::structure_url;
+			$json = Handler::structure($url);
+			return $callclass::$structure = json_decode($json);
 		}
 	}
 }
