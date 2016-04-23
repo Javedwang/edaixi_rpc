@@ -18,7 +18,7 @@ use  App\Lib\Rpc\Apimodel  as  Apimodel;
 
 class RpcClient extends Apimodel
 {
-    const host = 'http://127.0.0.1:8888/api/v1/zombie';
+    public static $host = 'http://127.0.0.1:8888/api/v1/zombie';
 	const api_url = '/client';
 	const structure_url  = '/zombie_model_structure.json';
 	public static $structure = null;

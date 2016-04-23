@@ -31,7 +31,7 @@ class Apimodel
 		if($callclass::$structure->results->class_methods->$name == 'get' || $callclass::$structure->results->class_methods->$name == 'post' )
 		{
 			$methods[] = array($name, $args);
-			return Handler::ClassResult($callclass::host.$callclass::api_url,$methods);
+			return Handler::ClassResult($callclass::$host.$callclass::api_url,$methods);
 
 		}elseif($callclass::$structure->results->class_methods->$name == 'chain_methods' )
 		{
@@ -43,7 +43,7 @@ class Apimodel
 		{
 			$methods = $callclass::$chain_methods;
 			$callclass::$chain_methods = [];
-			return Handler::ClassResult($callclass::host.$callclass::api_url,$methods);
+			return Handler::ClassResult($callclass::$host.$callclass::api_url,$methods);
 		}else
 		{
 			return 'method error';
@@ -56,7 +56,7 @@ class Apimodel
 		if($callclass::$structure->results->instance_methods->$name == 'get' || $callclass::$structure->results->instance_methods->$name == 'post' )
 		{
 			$methods[] = array($name, $args);
-			$url = $callclass::host.$callclass::api_url.'/'.$this->id;
+			$url = $callclass::$host.$callclass::api_url.'/'.$this->id;
 			return Handler::ObjResult($url,$methods);
 
 		}
@@ -68,7 +68,7 @@ class Apimodel
 
 		}elseif($name == 'load')
 		{
-			$url = $callclass::host.$callclass::api_url.'/'.$this->id;
+			$url = $callclass::$host.$callclass::api_url.'/'.$this->id;
 			$methods = $this->obj_chain_methods;
 			$this->obj_chain_methods = [];
 			return Handler::ObjResult($url,$methods);
@@ -82,7 +82,7 @@ class Apimodel
 		$callclass = get_called_class();
 		if(empty($callclass::$structure))
 		{
-			 	$url = $callclass::host.$callclass::api_url.$callclass::structure_url;
+			 	$url = $callclass::$host.$callclass::api_url.$callclass::structure_url;
 			 	$json = Handler::structure($url);
 			 	return $callclass::$structure = json_decode($json);
 		}
